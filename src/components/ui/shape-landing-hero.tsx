@@ -74,10 +74,12 @@ function HeroGeometric({
     badge = "Evergreen Labs",
     title1 = "Build for Tomorrow",
     title2 = "Rooted in Excellence",
+    children,
 }: {
     badge?: string;
     title1?: string;
     title2?: string;
+    children?: React.ReactNode;
 }) {
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 30 },
@@ -190,6 +192,17 @@ function HeroGeometric({
                             innovative design and cutting-edge technology.
                         </p>
                     </motion.div>
+
+                    {children && (
+                        <motion.div
+                            custom={3}
+                            variants={fadeUpVariants}
+                            initial="hidden"
+                            animate="visible"
+                        >
+                            {children}
+                        </motion.div>
+                    )}
                 </div>
             </div>
 
